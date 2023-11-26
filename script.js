@@ -92,3 +92,8 @@ function onCardClick(e){
     }    
 }
 
+// remettre les variables à 0
+const button = document.getElementById('new-game-js');
+button.addEventListener('click', ()=> {
+    
+})
