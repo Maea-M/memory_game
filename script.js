@@ -11,6 +11,7 @@ function createCard(CardUrl) {
     
     card.appendChild(cardContent);
     card.addEventListener('click', onCardClick);
+
     return card;
 }
 
@@ -58,11 +59,13 @@ allCards.forEach(card => {
 // si elles sont identiques, elles sont conservées
 // si elles sont différentes, elles sont retournées
 let selectedCards = [];
+
 function onCardClick(e){
     const card = e.target.parentElement;
     card.classList.add("flip");
 
     selectedCards.push(card);
+
     if (selectedCards.length === 2) {
         // rajouter un Timeout sinon les cartes disparaissent
         setTimeout(()=> {
@@ -86,14 +89,10 @@ function onCardClick(e){
                 selectedCards[1].classList.remove("flip");
             }
             selectedCards = [];
+    
         }, 1000
     
         )
-    }    
-}
-
-// remettre les variables à 0
-const button = document.getElementById('new-game-js');
-button.addEventListener('click', ()=> {
+    } 
     
-})
+}
